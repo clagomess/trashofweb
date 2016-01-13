@@ -1,0 +1,43 @@
+﻿<div id="<?php echo $this->id; ?>" class="box-publicar">
+    <textarea name="tx-publicar"></textarea>
+    <div class="clear"></div>
+    <span class="contador">0/200</span>
+    <div class="bt-enviar">
+        <input type="button" value="<?php echo _("Enviar"); ?>" class="b-bt-enviar"/>
+    </div>
+    <div class="clear"></div>
+    <div class="load" style="display:none"></div>
+</div>
+<?php if($this->id == "boxpost"){ ?>
+<script type="text/javascript">
+    boxPublicar({
+        pai : '#<?php echo $this->id; ?>',
+        url: '<?php echo $this->url(General::mUrl('action/post')); ?>',
+        callback: function (jx) {
+            if (jx.status) {
+                getPost({
+                    tipo: 'rede'
+                });
+                getPost({
+                    tipo: 'amigo'
+                });
+            }
+        }
+    });
+</script>
+<?php } ?>
+<?php if($this->id == "boxpcom"){ ?>
+<script type="text/javascript">
+    boxPublicar({
+        pai: '#<?php echo $this->id; ?>',
+        url: '<?php echo $this->url(General::mUrl("action/comentario/nu_post/{$this->nu_post}")); ?>',
+        callback: function (jx) {
+            $('.popup').remove();
+            getComentario({
+                nu_post:"<?php echo $this->nu_post; ?>",
+                limit:"<?php echo $this->limit; ?>"
+            });
+        }
+    });
+</script>
+<?php } ?>

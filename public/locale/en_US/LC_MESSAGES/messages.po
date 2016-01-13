@@ -1,0 +1,272 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Cláudio <cla.gomess@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+msgid "Favor, preencher os campos!"
+msgstr "Please fill in the fields!"
+
+msgid "Trash Of WEB - E-mail de verificação"
+msgstr "Trash Of WEB - Verification Email"
+
+msgid "Foi enviado um e-mail para você com um código de validação."
+msgstr "An email was sent to you with a validation code."
+
+msgid "Perdemos seu cadastro, volte e tente novamente."
+msgstr "We lost your registration, go back and try again."
+
+msgid "O código não condiz com o que foi enviado por e-mail."
+msgstr "The code does not match what was sent by email."
+
+msgid "Trash Of WEB - Seja bem vindo!"
+msgstr "Trash Of WEB - Welcome!"
+
+msgid "Extensão não permitida!"
+msgstr "Extension not allowed!"
+
+msgid "Erro ao processar as imagens"
+msgstr "Error when processing images"
+
+msgid "Alterado com sucesso!"
+msgstr "Successfully changed!"
+
+msgid "404 - Página não encontrada"
+msgstr "404 - Page no found"
+
+msgid "Login ou senha incorretos!"
+msgstr "Login or password incorrect!"
+
+msgid "Uma rede social de postagens publicas simples e underground."
+msgstr "A social network of simple public posts and underground."
+
+msgid "rede, social, network, socialmedia"
+msgstr ""
+
+msgid "Faça seu cadastro!"
+msgstr "Register!"
+
+msgid "Sair =("
+msgstr "Logout =("
+
+msgid "Configurações"
+msgstr "Settings"
+
+msgid "Enviar"
+msgstr "Send"
+
+msgid "Seu Perfil:"
+msgstr "Your Profile:"
+
+msgid "Perfil:"
+msgstr "Profile:"
+
+msgid "Seguidores"
+msgstr "Followers"
+
+msgid "Seguindo"
+msgstr "Following"
+
+msgid "Seguidores:"
+msgstr "Followers:"
+
+msgid "Não há seguidores."
+msgstr "There are no followers."
+
+msgid "Seguindo:"
+msgstr "Following:"
+
+msgid "Não segue ninguém."
+msgstr "Don't follow anyone."
+
+msgid "Seguir"
+msgstr "Follow"
+
+msgid "Não Seguir"
+msgstr "Don't Follow"
+
+msgid "Comentar"
+msgstr "Comment"
+
+msgid "Ver post"
+msgstr "See post"
+
+msgid "Excluir"
+msgstr "Remove"
+
+msgid "Carregar Comentários"
+msgstr "Load Comments"
+
+msgid "Olá! seu código de verificação é:"
+msgstr "Hello! Your Verification Code is:"
+
+msgid "Olá! seja bem vindo!"
+msgstr "Hello! Welcome!"
+
+msgid "Identificação:"
+msgstr "Identification:"
+
+msgid "ID:"
+msgstr "ID:"
+
+msgid "Data Cadastro:"
+msgstr "Registration Date:"
+
+msgid "Ultimo acesso:"
+msgstr "Last Login:"
+
+msgid "Nome:"
+msgstr "Name:"
+
+msgid "Sobrenome:"
+msgstr "Surname:"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Foto:"
+msgstr "Picture:"
+
+msgid "Uma foto de até 2MB"
+msgstr "A photo of up to 2MB"
+
+msgid "Segurança"
+msgstr "Security"
+
+msgid "(Preencha somente se for alterar)"
+msgstr "(Complete only if changing)"
+
+msgid "Senha Atual:"
+msgstr "Current Password:"
+
+msgid "Senha Nova:"
+msgstr "New password:"
+
+msgid "Senha Novamente:"
+msgstr "Password Again:"
+
+msgid "Localização"
+msgstr "Location"
+
+msgid "Pais:"
+msgstr "Country:"
+
+msgid "(A alteração do pais afeta os post da rede)"
+msgstr "(Changing the country affect the net post)"
+
+msgid "Idioma:"
+msgstr "Language:"
+
+msgid "Fuso horário:"
+msgstr "Time Zone:"
+
+msgid "Privacidade"
+msgstr "Privacy"
+
+msgid "Desejo receber apenas e-mails importantes"
+msgstr "I wish to receive only important emails"
+
+msgid "Desejo receber todos e-mails"
+msgstr "I want to receive all emails"
+
+msgid "Salvar"
+msgstr "Save"
+
+msgid "Excluir minha conta =("
+msgstr "Delete my account = ("
+
+msgid "Selecionar Foto"
+msgstr "Select Picture"
+
+msgid "Publique Qualquer Coisa:"
+msgstr "Publish Anything:"
+
+msgid "Últimas Publicações da rede:"
+msgstr "Latest Publications of the network:"
+
+msgid "Não há publicações de seu país."
+msgstr "There are no postings in your country."
+
+msgid "Publicações de amigos:"
+msgstr "Publications friends:"
+
+msgid "Não há publicações de amigos."
+msgstr "There are no posts from friends."
+
+msgid "Suas postagens:"
+msgstr "Your posts:"
+
+msgid "Postagens de"
+msgstr "Postings"
+
+msgid "Você não possui publicações."
+msgstr "You have no publications."
+
+msgid "Acesse:"
+msgstr "Sign In:"
+
+msgid "Senha:"
+msgstr "Password:"
+
+msgid "Acessar"
+msgstr "Access"
+
+msgid "Cadastre-se! É rápido!"
+msgstr "Sign up! It's fast!"
+
+msgid "Não queremos seus dados, só queremos que você se divirta!"
+msgstr "We don't want your data, we want you to have fun!"
+
+msgid "Termos de uso:"
+msgstr "Terms of use:"
+
+msgid "Concordo com os termos de uso."
+msgstr "I agree to the terms of use."
+
+msgid "Cadastrar"
+msgstr "Register"
+
+msgid "Código de verificação:"
+msgstr "Verification Key:"
+
+msgid "Concluir Cadastro"
+msgstr "Complete Sign Up"
+
+msgid "Permissão negada."
+msgstr "Permission denied."
+
+msgid "Conteúdo inválido."
+msgstr "Invalid content."
+
+msgid "Nome inválido!"
+msgstr "Invalid name!"
+
+msgid "Sobrenome inválido!"
+msgstr "Invalid surname!"
+
+msgid "Seu e-mail parece ser inválido."
+msgstr "Your email address appears to be invalid."
+
+msgid "Esse e-mail já existe."
+msgstr "This email already exists."
+
+msgid "A senha deve ter de 6 a 20 caracteres!"
+msgstr "The password must be 6 to 20 characters!"
+
+msgid "As senhas não são iguais!"
+msgstr "Passwords don't match!"
+
+msgid "Sua senha está incorreta!"
+msgstr "Your password is wrong!"
+
+msgid "Para se cadastrar, é necessário ler e concordar com os termos"
+msgstr "To register, you must read and agree to the terms"
+
+#~ msgid "404 - Não encontrado"
+#~ msgstr "404 - Not Found"

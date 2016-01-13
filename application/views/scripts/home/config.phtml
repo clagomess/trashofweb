@@ -1,0 +1,169 @@
+<?php 
+$this->headScript()->appendFile(Zend_Registry::get('application')->sys->url . 
+    '/js/jquery.uploadifive.min.js'); 
+?>
+<h2><?php echo _("Configurações"); ?></h2>
+<div class="clear"></div>
+<div class="status-bar" style="display:none"></div>
+<div id="config">
+    <div style="float:left">
+        <p><strong><?php echo _("Identificação:"); ?></strong></p>
+        <p>
+		    <?php echo _("ID:"); ?> <span><?php echo $this->usuario['nu_usuario']; ?>
+	    </p>
+        <p>
+		    <?php echo _("Data Cadastro:"); ?> <span><?php echo $this->usuario['dt_cadastro']; ?></span>
+	    </p>
+        <p>
+		    <?php echo _("Ultimo acesso:"); ?> <span><?php echo $this->usuario['dt_ultimo_acesso']; ?></span>
+	    </p>
+	    <p>
+		    <label><?php echo _("Nome:"); ?></label>
+		    <input type="text" class="in" name="twu_nome" maxlength="20" 
+                value="<?php echo current(explode(" ",$this->usuario['no_usuario'])); ?>"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Sobrenome:"); ?></label>
+		    <input type="text" class="in" name="twu_sobrenome" maxlength="20" 
+                value="<?php echo end(explode(" ",$this->usuario['no_usuario'])); ?>"/>
+	    </p>
+	    <p>
+		    <?php echo _("Email:"); ?> <span><?php echo $this->usuario['no_email']; ?></span>
+	    </p>
+        <p><strong><?php echo _("Foto:"); ?></strong></p>
+        <p>
+            <span><?php echo _("Uma foto de até 2MB"); ?></span>
+            <table>
+                <tr>
+                    <td>
+                        <img id="usr_imagem" 
+                            src="<?php echo General::urlImgUser($this->auth); ?>" 
+                            width="50" height="50"/>
+                    </td>
+                    <td>
+                        <input id="imagem" name="imagem" type="file" multiple="false" />
+                        <div id="queue"></div>
+                    </td>
+                </tr>
+            </table>
+        </p>
+    </div>
+    <div style="float:right">
+        <p><strong><?php echo _("Segurança"); ?></strong> <span><?php echo _("(Preencha somente se for alterar)"); ?></span></p>
+        <p>
+		    <label><?php echo _("Senha Atual:"); ?></label>
+		    <input type="password" class="in" name="twu_senha_n" maxlength="20"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Senha Nova:"); ?></label>
+		    <input type="password" class="in" name="twu_senha" maxlength="20"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Senha Novamente:"); ?></label>
+		    <input type="password" class="in" name="twu_senha_r" maxlength="20"/>
+	    </p>
+        <p><strong><?php echo _("Localização"); ?></strong></p>
+        <p>
+		    <label><?php echo _("Pais:"); ?> 
+                <span><?php echo _("(A alteração do pais afeta os post da rede)"); ?></span>
+		    </label>
+		    <select name="twu_pais">
+                <?php 
+                foreach($this->pais as $item){
+                    echo "<option value=\"{$item['co_pais']}\"";
+                    if($item['co_pais'] == $this->usuario['co_pais']){
+                        echo " selected ";
+                    }
+                    echo ">{$item['no_pais']}</option>\n";
+                }
+                ?>
+            </select>
+	    </p>
+        <p>
+            <label><?php echo _("Idioma:"); ?></label>
+            <select name="twu_idioma">
+                <?php 
+                foreach($this->idioma as $item){
+                    echo "<option value=\"{$item['co_idioma']}\"";
+                    if($item['co_idioma'] == $this->usuario['co_idioma']){
+                        echo " selected ";
+                    }
+                    echo ">{$item['no_idioma']}</option>\n";
+                }
+                ?>
+            </select>
+        </p>
+        <p>
+            <label><?php echo _("Fuso horário:"); ?></label>
+            <select name="twu_fuso">
+                <?php 
+                foreach($this->fuso as $item){
+                    echo "<option value=\"{$item['co_fuso']}\"";
+                    if($item['co_fuso'] == $this->usuario['co_fuso']){
+                        echo " selected ";
+                    }
+                    echo ">{$item['no_fuso']}</option>\n";
+                }
+                ?>
+            </select>
+        </p>
+        <p><strong><?php echo _("Privacidade"); ?></strong></p>
+        <p>
+		    <label><?php echo _("Email:"); ?></label>
+		    <input type="radio" name="twu_st_email" value="0" 
+                <?php echo ($this->usuario['st_plus'] == 0 ? 'checked' : '') ?>/>
+            <?php echo _("Desejo receber apenas e-mails importantes"); ?> <br/>
+            <input type="radio" name="twu_st_email" value="1"
+                <?php echo ($this->usuario['st_plus'] == 1 ? 'checked' : '') ?>/>
+            <?php echo _("Desejo receber todos e-mails"); ?>
+	    </p>
+    </div>
+    <div class="clear"></div>
+	<div class="bt-area">
+		<input type="button" id="bt-salvar" value="<?php echo _("Salvar"); ?>"/>
+        <a href="#" target="_blank" 
+            style="float:right; color:#f00"><?php echo _("Excluir minha conta =("); ?></a>
+		<div class="clear"></div>
+	</div>
+</div>
+<script type="text/javascript">
+    $('#bt-salvar').click(function () {
+        $('#config .status-bar').hide();
+        formSend({
+            url: "<?php echo $this->url(General::mUrl('action/atualizarcadastro')); ?>",
+            no_pai: "#config",
+            callback: function (j) {
+                if (j.status) {
+                    alert(j.msg);
+                    $('#config .status-bar').show();
+                } else {
+                    alert(j.msg);
+                }
+            }
+        });
+    });
+
+    $('#imagem').uploadifive({
+        'auto': true,
+        'queueID': 'queue',
+        'buttonText': '<?php echo _("Selecionar Foto"); ?>',
+        'uploadScript': "<?php echo $this->url(General::mUrl('action/atualizarfoto')) ?>",
+        'multi':false,
+        'onQueueComplete': function () {
+            $('#imagem').uploadifive('clearQueue');
+        },
+        'onUploadComplete': function (file, data) {
+            var j = eval('[' + data + ']');
+
+            if (j.length) {
+                if (j[0].status) {
+                    $('#usr_imagem').attr('src', j[0].url_imagem);
+                } else {
+                    alert(j[0].msg);
+                }
+            } else {
+                alert('Deu bode');
+            }
+        }
+    });
+</script>

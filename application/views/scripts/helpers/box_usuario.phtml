@@ -1,0 +1,77 @@
+<?php 
+$this->usuario['size'] = 70;
+
+if(General::getUserID() == $this->usuario['co_usuario']){ 
+?>
+    <h2><?php echo _("Seu Perfil:"); ?></h2>
+<?php }else{ ?>
+    <h2><?php echo _("Perfil:"); ?></h2>
+<?php } ?>
+<div class="perfil">
+    <a href="<?php echo General::url_profile($this->usuario); ?>" class="thumb">
+        <img 
+            src="<?php echo General::urlImgUser($this->usuario); ?>" 
+            width="70" height="70"/>
+    </a>
+    <div class="info">
+        <p><?php echo $this->usuario['no_usuario']; ?></p>
+        <table width="100%">
+            <tr>
+                <td><?php echo _("Seguidores"); ?></td>
+                <td><?php echo _("Seguindo"); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo $this->usuario['seguidor']; ?></td>
+                <td><?php echo $this->usuario['seguido']; ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="clear"></div>
+    <div id="bt-seguidor">
+        <?php 
+        if(
+            $this->isProfile &&
+            General::getUserID() != $this->usuario['co_usuario']
+        ){ 
+            echo $this->partial('helpers/bt_seguir.phtml',$this);
+        } 
+        ?>
+    </div>
+    <div class="clear"></div>
+</div>
+<h2>
+    <a href="<?php echo $this->url(General::mUrl('home/followers/id/' . $this->usuario['nu_usuario']),null,false); ?>">
+    <?php echo _("Seguidores:"); ?>
+    </a>
+</h2>
+<?php if(count($this->arSeguidor)){ ?>
+<ul class="grid-pessoas">
+    <?php
+    foreach($this->arSeguidor as $item){
+        echo General::compressHtml($this->partial('helpers/li_grid.phtml',$item));
+    }       
+    ?>
+</ul>
+<?php }else{ ?>
+<div class="grid-pessoas">
+    <div class="none-label"><?php echo _("Não há seguidores."); ?></div>
+</div>
+<?php } ?>
+<h2>
+    <a href="<?php echo $this->url(General::mUrl('home/followers/id/' . $this->usuario['nu_usuario']),null,false); ?>">
+    <?php echo _("Seguindo:"); ?>
+    </a>
+</h2>
+<?php if(count($this->arSeguindo)){ ?>
+<ul class="grid-pessoas">
+    <?php
+    foreach($this->arSeguindo as $item){
+        echo General::compressHtml($this->partial('helpers/li_grid.phtml',$item));
+    }             
+    ?>
+</ul>
+<?php }else{ ?>
+<div class="grid-pessoas">
+    <div class="none-label"><?php echo _("Não segue ninguém."); ?></div>
+</div>
+<?php } ?>

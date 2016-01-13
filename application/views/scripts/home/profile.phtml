@@ -1,0 +1,24 @@
+<div class="left-bar">
+    <?php echo General::compressHtml($this->partial('helpers/box_usuario.phtml',$this)); ?>
+</div>
+<div style="width:530px; float:right; font-size: 0px;">
+    <?php if(General::getUserID() == $this->usuario['co_usuario']){ ?>
+    <h2><?php echo _("Suas postagens:") ?></h2>
+    <?php }else{ ?>
+    <h2><?php echo _("Postagens de") , " " , $this->usuario['no_usuario']; ?>:</h2>
+    <?php } ?>
+    <?php if(count($this->post)){ ?>
+    <ul id="post-usuario" class="post">
+        <?php
+        foreach($this->post as $item){
+            echo General::compressHtml($this->partial('helpers/li_post.phtml',$item));
+        }
+        ?>
+    </ul>
+    <?php }else{ ?>
+    <div class="post">
+        <div class="none-label"><?php echo _("Você não possui publicações."); ?></div>
+    </div>
+    <?php } ?>
+</div>
+<input type="hidden" value="<?php echo $this->usuario['nu_usuario']; ?>" id="nu_usuario"/>

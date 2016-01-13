@@ -1,0 +1,75 @@
+﻿<?php $pathPUBLIC = Zend_Registry::get('application')->sys->url; ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $pathPUBLIC; ?>css/style.css" />
+
+    <script type="text/javascript" src="<?php echo $pathPUBLIC; ?>js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo $pathPUBLIC; ?>js/basicfn.js"></script>
+	
+	<?php
+    $meta = array();
+    $meta['title'] = "Trash Of WEB";
+    $meta['description'] = _("Uma rede social de postagens publicas simples e underground.");
+    $meta['keywords'] = _("rede, social, network, socialmedia");
+    
+    $meta['canonical'] = $this->url(General::mUrl('index/index'));
+    $meta['favicon'] = $pathPUBLIC . 'img/favicon.png';
+    $meta['favicon_i'] = $pathPUBLIC . 'img/favicon.ico';
+    
+    $meta['title_m'] = $this->title ? $this->title : $meta['title'];
+    $meta['title'] = ($this->title ? $this->title . ' - ' . $meta['title'] : $meta['title']);
+    $meta['description'] = ($this->description ? $this->description : $meta['description']);
+    $meta['keywords'] = ($this->keywords ? $this->keywords : $meta['keywords']);
+    $meta['canonical'] = ($this->canonical ? $this->canonical : $meta['canonical']);
+    $meta['favicon_f'] = ($this->favicon ? $this->favicon : $meta['favicon']);
+    ?>
+    
+    <title><?php echo $meta['title']; ?></title>
+    <meta name="title" content="<?php echo $meta['title_m']; ?>" />
+	<meta name="description" content="<?php echo $meta['description']; ?>" />
+	<meta name="keywords" content="<?php echo $meta['keywords']; ?>"/>
+	<meta name="canonical" content="<?php echo $meta['canonical']; ?>"/>
+    
+    <link href="<?php echo $meta['favicon']; ?>" rel="apple-touch-icon" />
+    <link href="<?php echo $meta['favicon_i']; ?>" rel="shortcut icon" type="image/x-icon" />
+	<meta content="<?php echo $meta['favicon_f']; ?>" property="og:image">
+    <meta property="og:title" content="<?php echo $meta['title_m']; ?>" />
+    <?php 
+	echo $this->headLink();
+	echo $this->headScript();
+	?>
+</head>
+<?php
+if($this->indexpage){
+    $this->content = 800;
+}
+?>
+<body <?php echo ($this->content ? 'class="content-'. $this->content .'"' : '') ?>>
+    <input type="hidden" id="baseurl" 
+        value="<?php echo $this->url(General::mUrl('index/index'),null,true); ?>"/>
+    <div class="wrap-top-bar">
+        <div class="top-bar">
+            <div class="content">
+                <?php if($this->indexpage){ ?>
+                    Trash Of WEB
+                <?php }else if($this->publicpage){ ?>
+                    <a href="<?php echo $this->url(General::mUrl('index/index'),null,true); ?>" class="logout"><?php echo _("Faça seu cadastro!"); ?></a>
+                <?php }else if($this->content){ ?>
+                    <a href="<?php echo $this->url(General::mUrl('home/index'),null,true); ?>">← Home</a>
+                    <a href="<?php echo $this->url(General::mUrl('home/logout'),null,true); ?>" class="logout"><?php echo _("Sair =("); ?></a>
+                <?php }else{ ?>
+                    <a href="<?php echo $this->url(General::mUrl('home/config'),null,true); ?>" class="conf"><?php echo _("Configurações"); ?></a>
+                    <a href="<?php echo $this->url(General::mUrl('home/logout'),null,true); ?>" class="logout"><?php echo _("Sair =("); ?></a>
+                <?php } ?>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+	<div class="content">
+		<?php echo $this->layout()->content; ?>
+		<div class="clear"></div>
+	</div>
+</body>
+</html>

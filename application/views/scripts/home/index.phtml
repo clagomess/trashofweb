@@ -1,0 +1,48 @@
+<div class="left-bar">
+    <?php echo General::compressHtml($this->partial('helpers/box_usuario.phtml',$this)); ?>
+</div>
+<div class="middle-bar">
+    <h2><?php echo _("Publique Qualquer Coisa:"); ?></h2>
+    <?php 
+    echo General::compressHtml($this->partial('helpers/box_publicar.phtml',array(
+        'id'=>'boxpost'
+    ))); 
+    ?>
+    <h2>
+        <?php echo _("Últimas Publicações da rede:"); ?>
+        <div class="load" style="display:none"></div>
+    </h2>
+    <?php if(count($this->arPostRede)){ ?>
+    <ul id="post-rede" class="post">
+        <?php
+        foreach($this->arPostRede as $item){
+            echo General::compressHtml($this->partial('helpers/li_post.phtml',$item));
+        }              
+        ?>
+    </ul>
+    <?php }else{ ?>
+    <div class="post">
+        <div class="none-label"><?php echo _("Não há publicações de seu país."); ?></div>
+    </div>
+    <?php } ?>
+</div>
+<div class="right-bar">
+    <h2>
+        <?php echo _("Publicações de amigos:"); ?>
+        <div class="load" style="display:none"></div>
+    </h2>
+    <?php if(count($this->arPostAmigo)){ ?>
+    <ul id="post-amigo" class="post">
+        <?php
+        foreach($this->arPostAmigo as $item){
+            echo General::compressHtml($this->partial('helpers/li_post.phtml',$item));
+        }            
+        ?>
+    </ul>
+    <?php }else{ ?>
+    <div class="post">
+        <div class="none-label"><?php echo _("Não há publicações de amigos."); ?></div>
+    </div>
+    <?php } ?>
+</div>
+<div class="clear"></div>

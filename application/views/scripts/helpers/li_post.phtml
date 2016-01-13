@@ -1,0 +1,75 @@
+﻿<?php
+$serie = substr(uniqid(),-3);
+
+if($this->nu_comentario){
+    $liid = "comentarioid=\"{$this->nu_comentario}\"";
+}else{
+    $liid  = "postid=\"{$this->nu_post}\" ";
+    $liid .= "postli=\"{$serie}\" ";
+    $liid .= "utc=\"{$this->dt_cadastro_utc}\"";
+}
+?>
+<li <?php echo $liid; ?>>
+    <div class="thumb">
+        <a href="<?php echo General::url_profile($this) ?>">
+            <img src="<?php echo General::urlImgUser($this); ?>"
+                <?php 
+                if($this->nu_comentario){
+                    echo 'width="32" height="32"';
+                }else{
+                    echo 'width="50" height="50"';
+                }
+                ?>
+            />
+        </a>
+    </div>
+    <div class="pcontent">
+        <h4><?php echo $this->no_usuario; ?></h4>
+        <div class="text"><?php 
+        echo General::getPost(($this->tx_comentario ? $this->tx_comentario : $this->tx_post)); 
+        ?></div>
+        <?php if(!$this->nu_comentario){ ?>
+            <div class="action">
+                <?php if($this->qt_comentario != 0){ ?>
+                    <?php echo $this->qt_comentario; ?> ☁
+                    &bull;
+                <?php } ?>
+                <a href="javascript:comentar(<?php echo "'{$this->nu_post}','{$serie}'"; ?>);">
+                    <?php echo _("Comentar"); ?>
+                </a>
+                &bull;
+                <a href="<?php echo General::url_post($this) ?>">
+                    <?php echo _("Ver post"); ?>
+                </a>
+                <?php if($this->co_usuario == General::getUserID()){ ?>
+                    &bull; <a href="#" class="off">
+                        <?php echo _("Excluir"); ?>
+                    </a>
+                <?php } ?>
+                <?php if($this->qt_comentario > 3){ ?>
+                    &bull; <a href="#">
+                        <?php echo _("Carregar Comentários"); ?>
+                    </a>
+                <?php } ?>
+            </div>
+        <?php } ?>
+        <div class="data">
+            <?php echo General::dataMin($this->dt_cadastro, $this->dt_cadastro_utc); ?>
+            <?php if($this->co_usuario == General::getUserID() && $this->nu_comentario){ ?>
+            &bull; <a href="#" class="off">
+                <?php echo _("Excluir"); ?>
+            </a>
+            <?php } ?>
+        </div>
+    </div>
+    <?php if(count($this->comentario)){ ?>
+    <ul class="post pcomment">
+        <?php
+        foreach($this->comentario as $item){
+            $item['size'] = 32;
+            echo $this->partial('helpers/li_post.phtml',$item);
+        }
+        ?>
+    </ul>
+    <?php } ?>
+</li>

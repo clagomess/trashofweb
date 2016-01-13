@@ -1,0 +1,19 @@
+<div style="margin:0 auto; width:400px; font-size: 0px;">
+    <h2>Post:</h2>
+    <ul id="post" class="post">
+        <?php
+        if(count($this->post)){
+            foreach($this->post as $item){
+                echo General::compressHtml($this->partial('helpers/li_post.phtml',$item));
+            }
+        }                
+        ?>
+    </ul>
+    <?php
+    echo $this->partial('helpers/box_publicar.phtml',array(
+        'id' => 'boxpcom',
+        'nu_post' => $this->nu_post,
+        'limit' => 100
+    ));
+    ?>
+</div>

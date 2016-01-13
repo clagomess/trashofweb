@@ -1,0 +1,6 @@
+<div class="not-found">
+    <?php echo ($this->message ? $this->message : _("404 - Página não encontrada")) ?>
+</div>
+<div class="not-found-url">
+    <?php echo 'http://' . $_SERVER['HTTP_HOST'] . $this->url(); ?>
+</div>

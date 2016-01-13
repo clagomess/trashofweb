@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Cláudio <cla.gomess@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+msgid "Favor, preencher os campos!"
+msgstr ""
+
+msgid "Trash Of WEB - E-mail de verificação"
+msgstr ""
+
+msgid "Foi enviado um e-mail para você com um código de validação."
+msgstr ""
+
+msgid "Perdemos seu cadastro, volte e tente novamente."
+msgstr ""
+
+msgid "O código não condiz com o que foi enviado por e-mail."
+msgstr ""
+
+msgid "Trash Of WEB - Seja bem vindo!"
+msgstr ""
+
+msgid "Extensão não permitida!"
+msgstr ""
+
+msgid "Erro ao processar as imagens"
+msgstr ""
+
+msgid "Alterado com sucesso!"
+msgstr ""
+
+msgid "404 - Página não encontrada"
+msgstr ""
+
+msgid "Login ou senha incorretos!"
+msgstr ""
+
+msgid "Uma rede social de postagens publicas simples e underground."
+msgstr ""
+
+msgid "rede, social, network, socialmedia"
+msgstr ""
+
+msgid "Faça seu cadastro!"
+msgstr ""
+
+msgid "Sair =("
+msgstr ""
+
+msgid "Configurações"
+msgstr ""
+
+msgid "Enviar"
+msgstr ""
+
+msgid "Seu Perfil:"
+msgstr ""
+
+msgid "Perfil:"
+msgstr ""
+
+msgid "Seguidores"
+msgstr ""
+
+msgid "Seguindo"
+msgstr ""
+
+msgid "Seguidores:"
+msgstr ""
+
+msgid "Não há seguidores."
+msgstr ""
+
+msgid "Seguindo:"
+msgstr ""
+
+msgid "Não segue ninguém."
+msgstr ""
+
+msgid "Seguir"
+msgstr ""
+
+msgid "Não Seguir"
+msgstr ""
+
+msgid "Comentar"
+msgstr ""
+
+msgid "Ver post"
+msgstr ""
+
+msgid "Excluir"
+msgstr ""
+
+msgid "Carregar Comentários"
+msgstr ""
+
+msgid "Olá! seu código de verificação é:"
+msgstr ""
+
+msgid "Olá! seja bem vindo!"
+msgstr ""
+
+msgid "Identificação:"
+msgstr ""
+
+msgid "ID:"
+msgstr ""
+
+msgid "Data Cadastro:"
+msgstr ""
+
+msgid "Ultimo acesso:"
+msgstr ""
+
+msgid "Nome:"
+msgstr ""
+
+msgid "Sobrenome:"
+msgstr ""
+
+msgid "Email:"
+msgstr ""
+
+msgid "Foto:"
+msgstr ""
+
+msgid "Uma foto de até 2MB"
+msgstr ""
+
+msgid "Segurança"
+msgstr ""
+
+msgid "(Preencha somente se for alterar)"
+msgstr ""
+
+msgid "Senha Atual:"
+msgstr ""
+
+msgid "Senha Nova:"
+msgstr ""
+
+msgid "Senha Novamente:"
+msgstr ""
+
+msgid "Localização"
+msgstr ""
+
+msgid "Pais:"
+msgstr ""
+
+msgid "(A alteração do pais afeta os post da rede)"
+msgstr ""
+
+msgid "Idioma:"
+msgstr ""
+
+msgid "Fuso horário:"
+msgstr ""
+
+msgid "Privacidade"
+msgstr ""
+
+msgid "Desejo receber apenas e-mails importantes"
+msgstr ""
+
+msgid "Desejo receber todos e-mails"
+msgstr ""
+
+msgid "Salvar"
+msgstr ""
+
+msgid "Excluir minha conta =("
+msgstr ""
+
+msgid "Selecionar Foto"
+msgstr ""
+
+msgid "Publique Qualquer Coisa:"
+msgstr ""
+
+msgid "Últimas Publicações da rede:"
+msgstr ""
+
+msgid "Não há publicações de seu país."
+msgstr ""
+
+msgid "Publicações de amigos:"
+msgstr ""
+
+msgid "Não há publicações de amigos."
+msgstr ""
+
+msgid "Suas postagens:"
+msgstr ""
+
+msgid "Postagens de"
+msgstr ""
+
+msgid "Você não possui publicações."
+msgstr ""
+
+msgid "Acesse:"
+msgstr ""
+
+msgid "Senha:"
+msgstr ""
+
+msgid "Acessar"
+msgstr ""
+
+msgid "Cadastre-se! É rápido!"
+msgstr ""
+
+msgid "Não queremos seus dados, só queremos que você se divirta!"
+msgstr ""
+
+msgid "Termos de uso:"
+msgstr ""
+
+msgid "Concordo com os termos de uso."
+msgstr ""
+
+msgid "Cadastrar"
+msgstr ""
+
+msgid "Código de verificação:"
+msgstr ""
+
+msgid "Concluir Cadastro"
+msgstr ""
+
+msgid "Permissão negada."
+msgstr ""
+
+msgid "Conteúdo inválido."
+msgstr ""
+
+msgid "Nome inválido!"
+msgstr ""
+
+msgid "Sobrenome inválido!"
+msgstr ""
+
+msgid "Seu e-mail parece ser inválido."
+msgstr ""
+
+msgid "Esse e-mail já existe."
+msgstr ""
+
+msgid "A senha deve ter de 6 a 20 caracteres!"
+msgstr ""
+
+msgid "As senhas não são iguais!"
+msgstr ""
+
+msgid "Sua senha está incorreta!"
+msgstr ""
+
+msgid "Para se cadastrar, é necessário ler e concordar com os termos"
+msgstr ""
+

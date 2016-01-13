@@ -1,0 +1,24 @@
+<?php 
+if(General::isAuth()){
+    $nu_usuario = ($this->nu_usuario ? $this->nu_usuario : $this->usuario['nu_usuario']);
+    
+    if(isset($this->usuario)){
+        if(!$this->usuario['seg_vinculo']){
+            $nao_vinculo = true;
+        }
+    }
+    
+    if($nao_vinculo || $this->modo == 'seguir'){
+        $label = _("Seguir");
+        $class = "";
+        $modo = "seguir";
+    }else{
+        $label = _("Não Seguir");
+        $class = "bta-off";
+        $modo = "";
+    }
+    
+    echo "<a href=\"javascript:setSeguidor('{$modo}','{$nu_usuario}');\"";
+    echo " class=\"bta {$class}\">{$label}</a>";
+}
+?>

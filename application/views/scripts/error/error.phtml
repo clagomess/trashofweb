@@ -1,0 +1,19 @@
+<?php
+if($this->is404){ 
+    echo $this->partial('helpers/404.phtml',$this);
+}else{
+?>
+    <h2><?php echo $this->message ?></h2>
+    <?php if (isset($this->exception)): ?>
+	    <h3>Exception information:</h3>
+	    <p>
+		    <b>Message:</b> <?php echo utf8_encode($this->exception->getMessage()) ?>
+	    </p>
+
+	    <h3>Stack trace:</h3>
+	    <pre><?php echo $this->exception->getTraceAsString() ?></pre>
+
+	    <h3>Request Parameters:</h3>
+	    <pre><?php echo $this->escape(var_export($this->request->getParams(), true)) ?></pre>
+    <?php endif ?>
+<?php } ?>

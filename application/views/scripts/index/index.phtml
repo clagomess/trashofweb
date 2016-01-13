@@ -1,0 +1,106 @@
+<div id="login">
+	<h1><?php echo _("Acesse:"); ?></h1>
+    <?php if($this->login_error){ ?>
+    <div class="login-error">
+        <?php echo $this->login_error; ?>
+    </div>
+    <?php } ?>
+    <form method="post">
+        <p>
+            <label><?php echo _("Email:"); ?></label>
+            <input type="email" class="in" 
+                name="twa_email" maxlength="45" 
+                value="<?php echo $_POST['twa_email']; ?>" />
+        </p>
+        <p>
+            <label><?php echo _("Senha:"); ?></label>
+            <input type="password" class="in" name="twa_senha" maxlength="20" />
+        </p>
+        <input type="submit" id="bt-login" value="<?php echo _("Acessar"); ?>" />
+    </form>
+</div>
+<div id="cadastre">
+	<h1><?php echo _("Cadastre-se! É rápido!"); ?></h1>
+	<h2><?php echo _("Não queremos seus dados, só queremos que você se divirta!"); ?></h2>
+    <div class="status-bar" style="display:none"></div>
+    <div id="step-a">
+	    <p>
+		    <label><?php echo _("Nome:"); ?></label>
+		    <input type="text" class="in" name="twunome" maxlength="20"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Sobrenome:"); ?></label>
+		    <input type="text" class="in" name="twusobrenome" maxlength="20"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Email:"); ?></label>
+		    <input type="email" class="in" name="twuemail" maxlength="45"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Senha:"); ?></label>
+		    <input type="password" class="in" name="twusenha" maxlength="20"/>
+	    </p>
+	    <p>
+		    <label><?php echo _("Senha Novamente:"); ?></label>
+		    <input type="password" class="in" name="twusenha_r" maxlength="20"/>
+	    </p>
+	    <div class="bt-area">
+            <div class="inner-bt">
+                <input type="checkbox" name="twuaceite_termo" value="S" />
+		        <a href="<?php echo $this->url(General::mUrl("info/term")); ?>" style="display: inline-block;" target="_blank">
+                    <?php echo _("Concordo com os termos de uso."); ?>
+		        </a>
+		        <input type="button" id="bt-cadastrar" value="<?php echo _("Cadastrar"); ?>" />
+                <div class="clear"></div>
+            </div>
+		    <div class="clear"></div>
+	    </div>
+    </div>
+    <div id="step-b" style="display:none">
+        <p>
+		    <label><?php echo _("Código de verificação:"); ?></label>
+		    <input type="text" class="in" name="twucode" maxlength="6"/>
+	    </p>
+        <div class="bt-area">
+            <div class="inner-bt">
+                <input type="button" id="bt-code" value="<?php echo _("Concluir Cadastro"); ?>" />
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+	    </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#bt-cadastrar').click(function () {
+        $('#cadastre .status-bar').hide();
+        $('#step-a .inner-bt input').css('visibility', 'hidden').parent().addClass('ld-onwhite');
+        formSend({
+            url: "<?php echo $this->url(General::mUrl('action/cadastrar')); ?>",
+            no_pai: "#step-a",
+            callback: function (j) {
+                $('#step-a .inner-bt input').css('visibility', '').parent().removeClass('ld-onwhite');
+                if (j.status) {
+                    $('#step-a').hide();
+                    $('#step-b').show();
+                    $('#bt-code').click(function () {
+                        $('#step-b .inner-bt input').css('visibility', 'hidden').parent().addClass('ld-onwhite');
+                        formSend({
+                            url: "<?php echo $this->url(General::mUrl('action/confirmaremail')); ?>",
+                            no_pai: "#step-b",
+                            callback: function (j) {
+                                $('#step-b .inner-bt input').css('visibility', '').parent().removeClass('ld-onwhite');
+                                if (j.status) {
+                                    location.href = "<?php echo $this->url(General::mUrl('home')); ?>";
+                                } else {
+                                    $('#cadastre .status-bar').text(j.msg).show();
+                                }
+                            }
+                        });
+                    });
+                } else {
+                    $('#cadastre .status-bar').text(j.msg).show();
+                }
+            }
+        });
+    });
+</script>
